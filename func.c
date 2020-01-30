@@ -88,7 +88,7 @@ int main(int argc, char *argv[]){
         filter = str_replace(filter, "+", "");
         filter = str_replace(filter, ",", "");
         
-        snprintf(exec, 100,"nm -P %s | awk '$2 == \"T\" && $1 != \"main\" {print $1}'", filter);
+        snprintf(exec, 100,"nm -P %s | awk '$2 == \"T\" {print $1}'", filter);
         system(exec);
         
     }
